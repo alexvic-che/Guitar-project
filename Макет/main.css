@@ -1,0 +1,111 @@
+html{
+    font-size: 16px;
+}
+body{
+    font-family: "Roboto", sans-serif; 
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    background-color: #fff;
+    min-width: 320px;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+section{
+    padding: 50px 0;
+}
+a{
+    color: #111;
+}
+a:hover{
+    color: #ea0b0b;
+}
+/* Header*/
+.bg-body-tertiary .navbar-nav .nav-link{
+    color: #111;
+    font-weight: 500;
+    text-transform: uppercase;
+
+}
+.bg-body-tertiary .navbar-nav .nav-link:hover{
+    color: #ea0b0b;
+}
+.navbar-nav .dropdown-menu{
+    right: 0;
+    left: auto;
+}
+.top-menu li a::after{
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #ea0b0b;
+    height: 1px;
+    transition: all .3s;
+    transform: scale(0);
+
+}
+.top-menu li a:hover::after{
+    transform: scale(1);
+}
+/* Header*/
+
+/* Carusel */
+.my-carusel{
+    padding: 0;
+}
+.my-carusel .carousel-item{
+    display: flex;
+    max-height: 500px;
+}
+.my-carusel .carousel-item img{
+    object-fit: cover;
+}
+
+/* Carusel */
+
+/* card */
+.card{
+    
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    transition: all .3s;
+}
+.card:hover{
+    box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
+}
+/* card */
+
+/* Footer */
+.footer{
+    background-color: #343434;
+}
+.footer h4{
+    color: #ccc;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-bottom: 1px solid #666;
+    padding-bottom: 3px;
+}
+.footer a{
+    text-decoration: none;
+    transition: all .3s;
+}
+.footer a, .footer li{
+    color: #c8c8c8;
+}
+.footer a:hover{
+    color: #fff;
+    text-decoration: underline;
+
+}
+.footer li a{
+    display: block;
+}
+.footer-icons a{
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 50px;
+}
+/* Footer */
+
