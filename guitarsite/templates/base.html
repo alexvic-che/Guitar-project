@@ -25,190 +25,204 @@
     ></script>
   </head>
   <body>
-  <div class="page">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">ЛОГО</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Переключатель навигации"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 top-menu">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">Главная</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">О нас</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Форум</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                ><i class="fa-regular fa-user"></i
-              ></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Регистрация</a></li>
-                <li><a class="dropdown-item" href="#">Авторизация</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                data-bs-toggle="modal"
-                data-bs-target="#modal-gituar"
-                ><i class="fa-solid fa-guitar"></i
-              ></a>
-              <div
-                class="modal fade"
-                id="modal-gituar"
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog modal-xl">
-                  <div class="modal-content">
-                    <div
-                      class="modal-header bg-warning-subtle text-warning-emphasis"
-                    >
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">
-                        Избранное
-                      </h1>
-                    </div>
-                    <div class="modal-body">
-                      <table>
-                        <caption>
-                          Это пример таблицы, а это ее заголовок для описания
-                          содержимого.
-                        </caption>
-                        <thead>
-                          <tr>
-                            <th>Заголовок таблицы</th>
-                            <th>Заголовок таблицы</th>
-                            <th>Заголовок таблицы</th>
-                            <th>Заголовок таблицы</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Ячейка таблицы</td>
-                            <td>Ячейка таблицы</td>
-                            <td>Ячейка таблицы</td>
-                            <td>Ячейка таблицы</td>
-                          </tr>
-                          <tr>
-                            <td>Ячейка таблицы</td>
-                            <td>Ячейка таблицы</td>
-                            <td>Ячейка таблицы</td>
-                            <td>Ячейка таблицы</td>
-                          </tr>
-                          <tr>
-                            <td>Ячейка таблицы</td>
-                            <td>Ячейка таблицы</td>
-                            <td>Ячейка таблицы</td>
-                            <td>Ячейка таблицы</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
+    <div class="page">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">ЛОГО</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Переключатель навигации"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 top-menu">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">О нас</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Форум</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  >Аккорды</a
+                >
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">Аппликатуры аккордов</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Аккорды для песен</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  ><i class="fa-regular fa-user"></i
+                ></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Регистрация</a></li>
+                  <li><a class="dropdown-item" href="#">Авторизация</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-gituar"
+                  ><i class="fa-solid fa-guitar"></i
+                ></a>
+                <div
+                  class="modal fade"
+                  id="modal-gituar"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                      <div
+                        class="modal-header bg-warning-subtle text-warning-emphasis"
                       >
-                        Закрыть
-                      </button>
-                      <button type="button" class="btn btn-primary">
-                        Сохранить изменения
-                      </button>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Избранное
+                        </h1>
+                      </div>
+                      <div class="modal-body">
+                        <table>
+                          <caption>
+                            Это пример таблицы, а это ее заголовок для описания
+                            содержимого.
+                          </caption>
+                          <thead>
+                            <tr>
+                              <th>Заголовок таблицы</th>
+                              <th>Заголовок таблицы</th>
+                              <th>Заголовок таблицы</th>
+                              <th>Заголовок таблицы</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Ячейка таблицы</td>
+                              <td>Ячейка таблицы</td>
+                              <td>Ячейка таблицы</td>
+                              <td>Ячейка таблицы</td>
+                            </tr>
+                            <tr>
+                              <td>Ячейка таблицы</td>
+                              <td>Ячейка таблицы</td>
+                              <td>Ячейка таблицы</td>
+                              <td>Ячейка таблицы</td>
+                            </tr>
+                            <tr>
+                              <td>Ячейка таблицы</td>
+                              <td>Ячейка таблицы</td>
+                              <td>Ячейка таблицы</td>
+                              <td>Ячейка таблицы</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Закрыть
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Сохранить изменения
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Главная</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Поиск"
-              aria-label="Поиск"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Главная</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Поиск"
+                aria-label="Поиск"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
-    {% block content%}
-
-    {% endblock content%}
-    <footer>
-      <section class="footer">
-        <div class="conteiner">
-          <div class="row">
-            <div class="col-md-3 col-6">
-              <ul class="list-unstyled">
-                <li><h4>Info</h4></li>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">О проекте</a></li>
-                <li><a href="#">Контакты</a></li>
-              </ul>
-            </div>
-            <div class="col-md-3 col-6">
-              <ul class="list-unstyled">
-                <li><h4>О проекте</h4></li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Molestiae molestias pariatur eaque sequi minima!
-                  Necessitatibus corrupti itaque animi repudiandae nobis tempora
-                  ullam dolorem labore eius, corporis harum aspernatur, eveniet
-                  expedita.
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-3 col-6">
-              <ul class="list-unstyled">
-                <li><h4>Контакты</h4></li>
-                <li><a href="tel: 5513561557536">5513-5615-57-536</a></li>
-              </ul>
-            </div>
-            <div class="col-md-3 col-6">
-              <h4>Я в сети</h4>
-              <div class="footer-icons">
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-vk"></i></a>
-                <a href="#"><i class="fa-brands fa-telegram"></i></a>
+      </nav>
+      {% block content%} {% endblock content%}
+      <footer>
+        <section class="footer">
+          <div class="conteiner">
+            <div class="row">
+              <div class="col-md-3 col-6">
+                <ul class="list-unstyled">
+                  <li><h4>Info</h4></li>
+                  <li><a href="#">Главная</a></li>
+                  <li><a href="#">О проекте</a></li>
+                  <li><a href="#">Контакты</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 col-6">
+                <ul class="list-unstyled">
+                  <li><h4>О проекте</h4></li>
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Molestiae molestias pariatur eaque sequi minima!
+                    Necessitatibus corrupti itaque animi repudiandae nobis
+                    tempora ullam dolorem labore eius, corporis harum
+                    aspernatur, eveniet expedita.
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-3 col-6">
+                <ul class="list-unstyled">
+                  <li><h4>Контакты</h4></li>
+                  <li><a href="tel: 5513561557536">5513-5615-57-536</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 col-6">
+                <h4>Я в сети</h4>
+                <div class="footer-icons">
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-vk"></i></a>
+                  <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </div>
+        </section>
+      </footer>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+      ></script>
+    </div>
   </body>
 </html>
