@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from guitar import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("guitar.urls"))
 ]
+
+handler404 = views.not_found_page
