@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<section class="main-content">
+  <div class="container">
+    <div class="row">
+      {%for sing in sings%}
+      <div class="col-lg-4 col-sm-6 mb-3">
+        <a href="{{sing.get_absolute_url}}" class="link-to-sing">
+          <div class="card" style="width: 18rem">
+            <img
+              src="{% static 'guitar/img/5.jpeg' %}"
+              class="card-img-top"
+              alt="5"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{sing.title}}</h5>
+              <p class="card-text">
+                {{sing.content|truncatewords:25|linebreaks}}
+              </p>
+              <a href="##" class="btn btn-primary">Добавить в избранное</a>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor%}
+    </div>
+  </div>
+</section>
+{% endblock content%}
