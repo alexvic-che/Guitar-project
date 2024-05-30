@@ -43,3 +43,4 @@ def show_sings_by_difficult(request, difficult_slug):
 
 def not_found_page(request, exception):
     return HttpResponseNotFound("<h1>Страница не найдена</h1>")
+

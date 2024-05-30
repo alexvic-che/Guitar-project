@@ -16,7 +16,8 @@ class Sings(models.Model):
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(choices=Status.choices, default=Status.DRAFT)
-    difficult = models.ForeignKey("Difficulty", on_delete=models.PROTECT, related_name="dif")
+    difficult = models.ForeignKey("Difficulty", on_delete=models.PROTECT, related_name="sings")
+    chords = models.ManyToManyField("Chords", related_name="sings")
 
     objects = models.Manager()
     published = PublishedModel()
@@ -42,3 +43,10 @@ class Difficulty(models.Model):
 
     def get_absolute_url(self):
         return reverse('difficults', kwargs={'difficult_slug':self.slug})
+
+class Chords(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=255, db_index=True, unique=True)
+
+    def __str__(self):
+        return self.name
