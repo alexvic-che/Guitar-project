@@ -124,3 +124,34 @@ footer{
 }
 /* Footer */
 
+/* all_sings static */
+
+/* nav */
+
+.nav-on-allsings .nav-link{
+    color: #111;
+    font-weight: 500;
+    text-transform: uppercase;
+
+}
+.nav-on-allsings  .nav-link:hover{
+    color: #ea0b0b;
+}
+
+.nav-on-allsings li a::after{
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #ea0b0b;
+    height: 1px;
+    transition: all .3s;
+    transform: scale(0);
+
+}
+.nav-on-allsings  li a:hover::after{
+    transform: scale(1);
+}
+
+/* nav */
+
+/* all_sings static */
