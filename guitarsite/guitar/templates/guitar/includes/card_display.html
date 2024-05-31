@@ -13,12 +13,21 @@
               alt="5"
             />
             <div class="card-body">
-              <h5 class="card-title">{{sing.title}}</h5>
+              <h5 class="card-title">{{sing.author.name}}-{{sing.title}}</h5>
               <p class="card-text">
                 {{sing.content|truncatewords:25|linebreaks}}
               </p>
               <a href="##" class="btn btn-primary">Добавить в избранное</a>
-              <h5 class="card-title">{{sing.difficult.name}}</h5>
+              <h5 class="card-title">
+                {{sing.difficult.name}}
+                {% with sing.chords.all as chords%}
+                  {% if chords%}
+                    {% for chord in chords%}
+                      {{chord.name}}
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+              </h5>
             </div>
           </div>
         </a>

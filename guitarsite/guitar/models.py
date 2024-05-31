@@ -18,6 +18,7 @@ class Sings(models.Model):
     is_published = models.BooleanField(choices=Status.choices, default=Status.DRAFT)
     difficult = models.ForeignKey("Difficulty", on_delete=models.PROTECT, related_name="sings")
     chords = models.ManyToManyField("Chords", related_name="sings")
+    author = models.ForeignKey("Authors", on_delete=models.PROTECT, related_name="sings", null=True)
 
     objects = models.Manager()
     published = PublishedModel()
@@ -34,6 +35,8 @@ class Sings(models.Model):
     def get_absolute_url(self):
         return reverse('sing', kwargs={'sing_slug':self.slug})
 
+
+
 class Difficulty(models.Model):
     name = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=255, db_index=True, unique=True)
@@ -42,7 +45,7 @@ class Difficulty(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('difficults', kwargs={'difficult_slug':self.slug})
+        return reverse('sings_by_difficulty', kwargs={'difficult_slug':self.slug})
 
 class Chords(models.Model):
     name = models.CharField(max_length=100, db_index=True)
@@ -50,3 +53,13 @@ class Chords(models.Model):
 
     def __str__(self):
         return self.name
+
+class Authors(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=255, db_index=True, unique=True)
+
+    def __str__(self):
+        return self.name
+    def get_absolute_url(self):
+
+        return reverse('sings_by_author', kwargs={'author_slug':self.slug})
