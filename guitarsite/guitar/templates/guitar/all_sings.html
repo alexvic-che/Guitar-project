@@ -12,7 +12,7 @@
         role="button"
         aria-expanded="false"
         >
-        {% if difficult%}
+        {% if difficult %}
           {{ difficult.name }}
         {% else %}
           Сложность
@@ -25,7 +25,7 @@
             class="dropdown-item text-center"
             href="{{ dif.get_absolute_url }}"
           >
-            {{ dif.name}}
+            {{ dif.name }}
           </a>
         </li>
 
@@ -39,7 +39,12 @@
         href="#"
         role="button"
         aria-expanded="false"
-        >{% if author%} {{ author.name }} {% else %} Автор {% endif%}
+        >
+        {% if author%}
+          {{ author.name }}
+        {% else %}
+          Автор
+        {% endif%}
       </a>
       <ul class="dropdown-menu">
         {% for author in authors %}

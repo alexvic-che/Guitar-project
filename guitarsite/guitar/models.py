@@ -18,7 +18,7 @@ class Sings(models.Model):
     is_published = models.BooleanField(choices=Status.choices, default=Status.DRAFT)
     difficult = models.ForeignKey("Difficulty", on_delete=models.PROTECT, related_name="sings")
     chords = models.ManyToManyField("Chords", related_name="sings")
-    author = models.ForeignKey("Authors", on_delete=models.PROTECT, related_name="sings", null=True)
+    author = models.ForeignKey("Authors", on_delete=models.PROTECT, related_name="sings")
 
     objects = models.Manager()
     published = PublishedModel()

@@ -24,6 +24,7 @@ def show_sings(request, difficult_slug=None , author_slug=None ):
 
         sings = Sings.published.filter(difficult_id=difficult.pk)
         context = {
+            "difficult":difficult,
             "sings": sings,
             "difficults": difficults,
             "authors": authors
@@ -38,6 +39,7 @@ def show_sings(request, difficult_slug=None , author_slug=None ):
 
         sings = Sings.published.filter(author_id=author.pk)
         context = {
+            "author":author,
             "sings": sings,
             "difficults": difficults,
             "authors": authors
