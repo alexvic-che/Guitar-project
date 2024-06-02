@@ -7,8 +7,8 @@ class PublishedModel(models.Manager):
 
 class Sings(models.Model):
     class Status(models.TextChoices):
-        DRAFT = 0, 'Черновик'
-        PUBLISHED = 1, 'Опубликовано'
+        DRAFT = '0', 'Черновик'
+        PUBLISHED = '1', 'Опубликовано'
 
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=255, unique=True,db_index=True)
