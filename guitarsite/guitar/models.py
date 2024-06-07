@@ -27,6 +27,8 @@ class Sings(models.Model):
         return self.title
 
     class Meta:
+        verbose_name = "Песня"
+        verbose_name_plural = "Песни"
         ordering = ["-time_create"]
         indexes = [
             models.Index(fields=["-time_create"]),
