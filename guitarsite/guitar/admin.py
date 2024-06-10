@@ -10,17 +10,22 @@ class SingsAdmin(admin.ModelAdmin):
     list_per_page = 10
     ordering = ["-time_create"]
     actions = ["set_published", "set_draft"]
+    search_fields = ["title", "author__name"]
+    list_filter = ["is_published", "difficult", "author"]
+
+
+    def set_ending(self, number):
+        ending = "ов"
+        if 2<=number<=4:
+            ending = "а"
+        if number==1:
+            ending = ""
+        return ending
 
     @admin.display(description="Количество аккордов", ordering="difficult")
     def chords_info(self, sing: Sings):
         chords = len(sing.chords.all())
-        la = "аккордов"
-        if 2<=chords<=4:
-            la = "аккордa"
-        if chords==1:
-            la = "аккорд"
-
-        return f"В этой песне  {chords} {la}"
+        return f"В этой песне  {chords} аккорд{self.set_ending(chords)}"
     @admin.action(description="Опубликовать выбранные песни")
     def set_published(self,request, queryset):
         count = queryset.update(is_published=Sings.Status.PUBLISHED)
