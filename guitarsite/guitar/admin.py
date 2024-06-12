@@ -12,6 +12,9 @@ class SingsAdmin(admin.ModelAdmin):
     actions = ["set_published", "set_draft"]
     search_fields = ["title", "author__name"]
     list_filter = ["is_published", "difficult", "author"]
+    fields = ["title","slug","content","author","difficult","is_published","chords"]
+    prepopulated_fields = {"slug": ("title",)}
+    filter_horizontal = ["chords"]
 
 
     def set_ending(self, number):
