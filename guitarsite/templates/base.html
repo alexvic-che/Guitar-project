@@ -46,26 +46,13 @@
                 <a class="nav-link" href="{% url 'index' %}">Главная</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">О нас</a>
+                <a class="nav-link" href="{% url 'sings' %}">Песни</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Форум</a>
+                <a class="nav-link" href="{% url 'add_sing' %}">Добавление песни</a>
               </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  href="#"
-                  >Аккорды</a
-                >
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#">Аппликатуры аккордов</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="{% url 'sings' %}">Аккорды для песен</a>
-                  </li>
-                </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Аппликатуры аккордов</a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">

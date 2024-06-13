@@ -64,6 +64,8 @@ def show_sing(request, sing_slug):
     }
     return render(request,"guitar/sing.html",context)
 
+def add_sing(request):
+    return render(request, "guitar/add_sing.html")
 
 
 def not_found_page(request, exception):
