@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseNotFound
 from django.urls import reverse
 
-from guitar.models import Sings, Difficulty, Authors
-
+from .models import Sings, Difficulty, Authors
+from .forms import AddSingForm
 
 def index(request):
     sings = Sings.published.all()[:6]
@@ -65,7 +65,18 @@ def show_sing(request, sing_slug):
     return render(request,"guitar/sing.html",context)
 
 def add_sing(request):
-    return render(request, "guitar/add_sing.html")
+    if request.method == "POST":
+        form = AddSingForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+    else:
+        form = AddSingForm()
+
+    context = {
+        "form":form
+    }
+
+    return render(request, "guitar/add_sing.html", context)
 
 
 def not_found_page(request, exception):

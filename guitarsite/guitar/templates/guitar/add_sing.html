@@ -1,21 +1,8 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
-<div class="conteiner">
-  <div class="row">
-    <div class="col-3"></div>
-    <div class="col-6">
-      <form action="">
-        <input class="form-control" type="text" placeholder="Введите название песни" aria-label="Введите название песни">
-        <div class="input-group">
-          <span class="input-group-text">Введите песню</span>
-          <textarea
-            class="form-control"
-            aria-label="С текстовым полем"
-          ></textarea>
-        </div>
-      </form>
-    </div>
-    <div class="col-3"></div>
-  </div>
-</div>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p}}
+  <p><button type="submit">Отправить</button></p>
+</form>
 {% endblock content%}
