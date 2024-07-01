@@ -155,3 +155,17 @@ footer{
 /* nav */
 
 /* all_sings static */
+
+/* add-sing-form*/
+.form-add-sing{
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: red;
+    width: 700px;
+    text-align: center;
+    
+    
+   
+}
+/* add-sing-form*/

@@ -1,12 +1,11 @@
 from django import forms
-from .models import Difficulty, Authors, Chords
+from .models import Sings
 
-class AddSingForm(forms.Form):
+class AddSingForm(forms.ModelForm):
+    class Meta:
+        model = Sings
+        fields = ['title','slug','content','is_published','difficult','chords','author']
+        labels={'slug':"URL"}
 
-    title = forms.CharField(max_length=255)
-    slug = forms.CharField(max_length=255)
-    content = forms.CharField(widget=forms.Textarea())
-    is_published = forms.BooleanField(required=False)
-    author = forms.ModelChoiceField(queryset=Authors.objects.all())
-    difficult = forms.ModelChoiceField(queryset=Difficulty.objects.all())
-    chords = forms.ModelChoiceField(queryset=Chords.objects.all())
+
+

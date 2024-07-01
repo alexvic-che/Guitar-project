@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseNotFound
 from django.urls import reverse
 
@@ -68,7 +68,8 @@ def add_sing(request):
     if request.method == "POST":
         form = AddSingForm(request.POST)
         if form.is_valid():
-            print(form.cleaned_data)
+            form.save()
+            return redirect("index")
     else:
         form = AddSingForm()
 
