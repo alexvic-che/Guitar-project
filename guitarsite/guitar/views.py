@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseNotFound
 from django.urls import reverse
+from django.template.defaultfilters import slugify
 
 from .models import Sings, Difficulty, Authors
 from .forms import AddSingForm
