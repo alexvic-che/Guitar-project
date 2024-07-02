@@ -56,7 +56,10 @@
     <div class="page">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">ЛОГО</a>
+          <a class="navbar-brand" href="{% url 'index'%}">
+            <img src="{% static 'img/logo/1.webp' %}" alt="Logo" class="d-inline-block align-text-center">
+            Guitarsite
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -71,7 +74,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 top-menu">
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'index' %}">Главная</a>
+                <a class="nav-link" href="{% url 'index' %}"></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'sings' %}">Песни</a>
@@ -82,8 +85,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Аппликатуры аккордов</a>
               </li>
-            </ul>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"

@@ -169,3 +169,15 @@ footer{
    
 }
 /* add-sing-form*/
+/*LOGO*/
+
+.navbar-brand{
+    font-size: xx-large;
+}
+.navbar-brand img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+/*LOGO*/
