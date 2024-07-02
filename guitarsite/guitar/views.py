@@ -67,7 +67,7 @@ def show_sing(request, sing_slug):
 
 def add_sing(request):
     if request.method == "POST":
-        form = AddSingForm(request.POST)
+        form = AddSingForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect("index")

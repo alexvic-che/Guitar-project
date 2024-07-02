@@ -13,6 +13,7 @@ class Sings(models.Model):
     title = models.CharField(max_length=50, verbose_name="Название песни")
     slug = models.SlugField(max_length=255, unique=True,db_index=True)
     content = models.TextField(blank=True)
+    card_image = models.ImageField(upload_to="card_images", blank=True, default=None, null=True, verbose_name="Картинка карточки")
     time_create = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
     time_update = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(choices=tuple(map(lambda x:(bool(x[0]),x[1]),Status.choices)), default=Status.DRAFT, verbose_name="Публикация")

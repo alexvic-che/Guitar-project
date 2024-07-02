@@ -7,11 +7,20 @@
       <div class="col-lg-4 col-sm-6 mb-3">
         <a href="{{sing.get_absolute_url}}" class="link-to-sing">
           <div class="card" style="width: 18rem">
+            {% if sing.card_image %}
+            <img
+              src="{{ sing.card_image.url }}"
+              class="card-img-top"
+              alt="5"
+            />
+            {% else%}
             <img
               src="{% static 'guitar/img/5.jpeg' %}"
               class="card-img-top"
               alt="5"
             />
+            {% endif %}
+
             <div class="card-body">
               <h5 class="card-title">{{sing.author.name}}-{{sing.title}}</h5>
               <p class="card-text">
