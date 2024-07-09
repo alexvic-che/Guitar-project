@@ -27,6 +27,8 @@
                 {{song.content|truncatewords:25|linebreaks}}
               </p>
               <a href="##" class="btn btn-primary">Добавить в избранное</a>
+              <a href="{% url 'update_song' slug=song.slug %}" class="btn btn-primary">Редактировать</a>
+              <a href="{% url 'delete_song' slug=song.slug %}" class="btn btn-primary">Удалить</a>
               <h5 class="card-title">
                 {{song.difficult.name}}
                 {% with song.chords.all as chords%}

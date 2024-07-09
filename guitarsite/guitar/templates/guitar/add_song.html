@@ -3,8 +3,20 @@
   <div class="form-add-song">
     <form action="" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      {{ form.as_p}}
-      <p><button type="submit">Отправить</button></p>
+      {% if add %}
+        {{ form.as_p}}
+        <p><button type="submit">Отправить</button></p>
+      {% endif %}
+      {% if update %}
+        {{ form.as_p}}
+        <p><button type="submit">Обновить</button></p>
+      {% endif %}
+      {% if delete %}
+        <p>Удаляемая запись: "{{ object }}"</p>
+        {{ form.as_p}}
+        <p><button type="submit">Удалить</button></p>
+      {% endif %}
+
     </form>
   </div>
 

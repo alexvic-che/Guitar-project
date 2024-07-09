@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseNotFound
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.template.defaultfilters import slugify
 from django.views import View
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
 
 from .models import Songs, Difficulty, Authors
 from .forms import AddSongForm
@@ -56,39 +56,42 @@ class ShowSongs(ListView):
         return context
 
 
+class ShowSong(DetailView):
+    model = Songs
+    template_name = "guitar/song.html"
+    slug_url_kwarg = 'song_slug'
+    context_object_name = 'song'
 
-def show_song(request, song_slug):
-    song = get_object_or_404(Songs, slug = song_slug)
+    def get_object(self, queryset=None):
+        return get_object_or_404(Songs.published, slug = self.kwargs[self.slug_url_kwarg])
 
-    context = {
-        "song": song
+
+class AddSong(CreateView):
+    template_name = "guitar/add_song.html"
+    form_class = AddSongForm
+    success_url = reverse_lazy('index')
+    extra_context = {
+        "add": 1
     }
-    return render(request,"guitar/song.html",context)
 
-# class ShowSong(ListView):
-#     template_name = "guitar/song.html"
-#     def get_context_data(self, *, object_list=None, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context[]
+class UpdateSong(UpdateView):
+    model = Songs
+    fields = ['title','slug','content','card_image','is_published','difficult','chords','author']
+    success_url = reverse_lazy('index')
+    template_name = "guitar/add_song.html"
+    extra_context = {
+        "update":1
+    }
 
-class AddSong(View):
-    def get(self, request):
-        form = AddSongForm()
-        context = {
-            "form": form
-        }
+class DeleteSong(DeleteView):
+    model = Songs
+    success_url = reverse_lazy('index')
+    template_name = "guitar/add_song.html"
+    extra_context = {
+        "delete": 1
+    }
 
-        return render(request, "guitar/add_song.html", context)
-    def post(self, request):
-        form = AddSongForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect("index")
-        context = {
-            "form": form
-        }
 
-        return render(request, "guitar/add_song.html", context)
 
 
 
