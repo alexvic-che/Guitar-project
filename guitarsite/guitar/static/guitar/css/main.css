@@ -81,7 +81,7 @@ a:hover{
 .card:hover{
     box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
 }
-.link-to-sing{
+.link-to-song{
     text-decoration: none;
 }
 
@@ -124,21 +124,21 @@ footer{
 }
 /* Footer */
 
-/* all_sings static */
+/* all_songs static */
 
 /* nav */
 
-.nav-on-allsings .nav-link{
+.nav-on-allsongs .nav-link{
     color: #111;
     font-weight: 500;
     text-transform: uppercase;
 
 }
-.nav-on-allsings  .nav-link:hover{
+.nav-on-allsongs  .nav-link:hover{
     color: #ea0b0b;
 }
 
-.nav-on-allsings li a::after{
+.nav-on-allsongs li a::after{
     content: '';
     display: block;
     width: 100%;
@@ -148,16 +148,16 @@ footer{
     transform: scale(0);
 
 }
-.nav-on-allsings  li a:hover::after{
+.nav-on-allsongs  li a:hover::after{
     transform: scale(1);
 }
 
 /* nav */
 
-/* all_sings static */
+/* all_songs static */
 
-/* add-sing-form*/
-.form-add-sing{
+/* add-song-form*/
+.form-add-song{
     margin-top: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -168,7 +168,7 @@ footer{
     
    
 }
-/* add-sing-form*/
+/* add-song-form*/
 
 /*LOGO*/
 

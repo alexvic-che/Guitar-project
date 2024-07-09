@@ -3,14 +3,14 @@ from . import views
 
 urlpatterns = [
 
-    path("", views.index, name="index"),
+    path("", views.Index.as_view(), name="index"),
     path("about/",views.about, name = "about"),
-    path("sing/<slug:sing_slug>/", views.show_sing, name="sing"),
-    path("sings/", views.show_sings, name="sings"),
+    path("song/<slug:song_slug>/", views.show_song, name="song"),
+    path("songs/", views.ShowSongs.as_view(), name="songs"),
 
-    path("sings/difficult/<slug:difficult_slug>/", views.show_sings, name="sings_by_difficulty"),
-    path("sings/author/<slug:author_slug>/", views.show_sings, name="sings_by_author"),
-    path("add_sing/", views.add_sing, name="add_sing"),
+    path("songs/difficult/<slug:difficult_slug>/", views.ShowSongs.as_view(), name="songs_by_difficulty"),
+    path("songs/author/<slug:author_slug>/", views.ShowSongs.as_view(), name="songs_by_author"),
+    path("add_song/", views.AddSong.as_view(), name="add_song"),
 
 ]
 

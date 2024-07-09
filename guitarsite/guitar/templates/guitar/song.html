@@ -1,21 +1,15 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <style>
-  body {
-    background-color: red
-<!--    background: url('background.jpg');-->
-<!--    background-repeat: no-repeat;-->
-<!--    background-size: cover;-->
-  }
 </style>
 <div class="container-lg">
   <div class="row">
     <div class="col-6">
-      <h1>{{sing.author}}-{{ sing.title}}</h1>
-      <pre>{{ sing.content }}</pre>
+      <h1>{{song.author}}-{{ song.title}}</h1>
+      <pre>{{ song.content }}</pre>
     </div>
     <div class="col-6">
       <h1>Аккорды</h1>
-      {% with sing.chords.all as chords%}
+      {% with song.chords.all as chords%}
         {% if chords%}
           {% for chord in chords%}
             <p>{{chord.name}}</p>

@@ -1,10 +1,10 @@
 from django import forms
-from .models import Sings
+from .models import Songs
 
-class AddSingForm(forms.ModelForm):
+class AddSongForm(forms.ModelForm):
 
     class Meta:
-        model = Sings
+        model = Songs
         fields = ['title','slug','content','card_image','is_published','difficult','chords','author']
 
 

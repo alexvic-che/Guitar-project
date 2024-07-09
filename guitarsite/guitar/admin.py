@@ -1,11 +1,11 @@
 from django.contrib import admin, messages
 from django.utils.safestring import mark_safe
 
-from .models import Sings, Difficulty, Authors
+from .models import Songs, Difficulty, Authors
 
 
-@admin.register(Sings)
-class SingsAdmin(admin.ModelAdmin):
+@admin.register(Songs)
+class SongsAdmin(admin.ModelAdmin):
     list_display = ["title","time_create", "card_imagess" ,"is_published","difficult","author", "chords_info"]
     list_display_links = ["title"]
     list_editable = ["is_published", "difficult" ,"author"]
@@ -29,19 +29,19 @@ class SingsAdmin(admin.ModelAdmin):
             ending = ""
         return ending
     @admin.display(description="Изображение карточки", ordering='content')
-    def card_imagess(self, sing: Sings):
+    def card_imagess(self, sing: Songs):
         if sing.card_image:
             return mark_safe(f"<img src='{sing.card_image.url}' width=50>")
         else:
             return mark_safe("<img src='/media/card_images/Stub.jpeg' width=50>")
 
     @admin.display(description="Количество аккордов", ordering="difficult")
-    def chords_info(self, sing: Sings):
+    def chords_info(self, sing: Songs):
         chords = len(sing.chords.all())
         return f"В этой песне  {chords} аккорд{self.set_ending(chords)}"
     @admin.action(description="Опубликовать выбранные песни")
     def set_published(self,request, queryset):
-        count = queryset.update(is_published=Sings.Status.PUBLISHED)
+        count = queryset.update(is_published=Songs.Status.PUBLISHED)
         la = "записей"
         if 2 <= count <= 4:
             la = "записи"
@@ -51,7 +51,7 @@ class SingsAdmin(admin.ModelAdmin):
 
     @admin.action(description="Отменить публикацию выбранных песен")
     def set_draft(self, request, queryset):
-        count = queryset.update(is_published=Sings.Status.DRAFT)
+        count = queryset.update(is_published=Songs.Status.DRAFT)
         la = "записей"
         if 2 <= count <= 4:
             la = "записи"

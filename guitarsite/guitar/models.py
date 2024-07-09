@@ -3,9 +3,9 @@ from django.urls import reverse
 
 class PublishedModel(models.Manager):
     def get_queryset(self):
-        return super().get_queryset().filter(is_published=Sings.Status.PUBLISHED)
+        return super().get_queryset().filter(is_published=Songs.Status.PUBLISHED)
 
-class Sings(models.Model):
+class Songs(models.Model):
     class Status(models.IntegerChoices):
         DRAFT = 0, 'Черновик'
         PUBLISHED = 1, 'Опубликовано'
@@ -17,9 +17,9 @@ class Sings(models.Model):
     time_create = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
     time_update = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(choices=tuple(map(lambda x:(bool(x[0]),x[1]),Status.choices)), default=Status.DRAFT, verbose_name="Публикация")
-    difficult = models.ForeignKey("Difficulty", on_delete=models.PROTECT, related_name="sings", verbose_name="Сложность")
-    chords = models.ManyToManyField("Chords", related_name="sings")
-    author = models.ForeignKey("Authors", on_delete=models.PROTECT, related_name="sings", verbose_name="Автор")
+    difficult = models.ForeignKey("Difficulty", on_delete=models.PROTECT, related_name="songs", verbose_name="Сложность")
+    chords = models.ManyToManyField("Chords", related_name="songs")
+    author = models.ForeignKey("Authors", on_delete=models.PROTECT, related_name="songs", verbose_name="Автор")
 
     objects = models.Manager()
     published = PublishedModel()
@@ -36,7 +36,7 @@ class Sings(models.Model):
         ]
 
     def get_absolute_url(self):
-        return reverse('sing', kwargs={'sing_slug':self.slug})
+        return reverse('song', kwargs={'song_slug':self.slug})
 
 
 
@@ -51,7 +51,7 @@ class Difficulty(models.Model):
         verbose_name_plural = "Сложность песен"
 
     def get_absolute_url(self):
-        return reverse('sings_by_difficulty', kwargs={'difficult_slug':self.slug})
+        return reverse('songs_by_difficulty', kwargs={'difficult_slug':self.slug})
 
 class Chords(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name="Аккорды")
@@ -72,4 +72,4 @@ class Authors(models.Model):
         return self.name
     def get_absolute_url(self):
 
-        return reverse('sings_by_author', kwargs={'author_slug':self.slug})
+        return reverse('songs_by_author', kwargs={'author_slug':self.slug})

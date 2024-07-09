@@ -3,13 +3,13 @@
 <section class="main-content">
   <div class="container">
     <div class="row">
-      {%for sing in sings%}
+      {%for song in songs%}
       <div class="col-lg-4 col-sm-6 mb-3">
-        <a href="{{sing.get_absolute_url}}" class="link-to-sing">
+        <a href="{{song.get_absolute_url}}" class="link-to-song">
           <div class="card" style="width: 18rem">
-            {% if sing.card_image %}
+            {% if song.card_image %}
             <img
-              src="{{ sing.card_image.url }}"
+              src="{{ song.card_image.url }}"
               class="card-img-top"
               alt="5"
             />
@@ -22,14 +22,14 @@
             {% endif %}
 
             <div class="card-body">
-              <h5 class="card-title">{{sing.author.name}}-{{sing.title}}</h5>
+              <h5 class="card-title">{{song.author.name}}-{{song.title}}</h5>
               <p class="card-text">
-                {{sing.content|truncatewords:25|linebreaks}}
+                {{song.content|truncatewords:25|linebreaks}}
               </p>
               <a href="##" class="btn btn-primary">Добавить в избранное</a>
               <h5 class="card-title">
-                {{sing.difficult.name}}
-                {% with sing.chords.all as chords%}
+                {{song.difficult.name}}
+                {% with song.chords.all as chords%}
                   {% if chords%}
                     {% for chord in chords%}
                       {{chord.name}}

@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <div class="container ">
-  <div class="form-add-sing">
+  <div class="form-add-song">
     <form action="" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form.as_p}}
