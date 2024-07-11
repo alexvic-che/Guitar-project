@@ -191,7 +191,8 @@
           </div>
         </div>
       </nav>
-      {% block content%} {% endblock content%}
+      {% block content%} {% block pagination%} {% endblock pagination%}{% endblock content%}
+      
       <footer>
         <section class="footer">
           <div class="conteiner">

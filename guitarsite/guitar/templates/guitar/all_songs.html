@@ -68,4 +68,35 @@
     </li>
   </ul>
 </div>
-{% include "guitar/includes/card_display.html"%} {% endblock content%}
+{% include "guitar/includes/card_display.html"%}
+
+{% block pagination%}
+{% if page_obj.has_other_pages%}
+  <nav aria-label="Пример навигации по страницам">
+    <ul class="pagination pagination-lg justify-content-center">
+      {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.previous_page_number}}" aria-label="Предыдущая">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+      {% endif %}
+      {% for p in paginator.page_range%}
+        {% if page_obj.number == p %}
+          <li class="page-item active"><a class="page-link" href="?page={{ p }}">{{ p }}</a></li>
+        {% elif p <= page_obj.number|add:2 and  p >= page_obj.number|add:-2 %}
+          <li class="page-item"><a class="page-link" href="?page={{ p }}">{{ p }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if page_obj.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.next_page_number}}" aria-label="Следующая">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      {% endif%}
+    </ul>
+  </nav>
+{% endif %}
+{% endblock pagination%}
+{% endblock content%}

@@ -4,6 +4,7 @@ from django.urls import reverse, reverse_lazy
 from django.template.defaultfilters import slugify
 from django.views import View
 from django.views.generic import ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
+from django.core.paginator import Paginator
 
 from .models import Songs, Difficulty, Authors
 from .forms import AddSongForm
@@ -24,7 +25,7 @@ def about(request):
 class ShowSongs(ListView):
     template_name = 'guitar/all_songs.html'
     context_object_name = "songs"
-    allow_empty = False
+    paginate_by = 3
 
     def get_queryset(self):
         queryset = Songs.published.all()
@@ -93,9 +94,8 @@ class DeleteSong(DeleteView):
 
 
 
-
-
-
 def not_found_page(request, exception):
     return HttpResponseNotFound("<h1>Страница не найдена</h1>")
+
+
 

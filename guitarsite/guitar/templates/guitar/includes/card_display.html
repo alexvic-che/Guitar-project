@@ -3,47 +3,53 @@
 <section class="main-content">
   <div class="container">
     <div class="row">
-      {%for song in songs%}
-      <div class="col-lg-4 col-sm-6 mb-3">
-        <a href="{{song.get_absolute_url}}" class="link-to-song">
-          <div class="card" style="width: 18rem">
-            {% if song.card_image %}
-            <img
-              src="{{ song.card_image.url }}"
-              class="card-img-top"
-              alt="5"
-            />
-            {% else%}
-            <img
-              src="{% static 'guitar/img/5.jpeg' %}"
-              class="card-img-top"
-              alt="5"
-            />
-            {% endif %}
+      {% if songs%}
+        {%for song in songs%}
+        <div class="col-lg-4 col-sm-6 mb-3">
+          <a href="{{song.get_absolute_url}}" class="link-to-song">
+            <div class="card" style="width: 18rem">
+              {% if song.card_image %}
+              <img
+                src="{{ song.card_image.url }}"
+                class="card-img-top"
+                alt="5"
+              />
+              {% else%}
+              <img
+                src="{% static 'guitar/img/5.jpeg' %}"
+                class="card-img-top"
+                alt="5"
+              />
+              {% endif %}
 
-            <div class="card-body">
-              <h5 class="card-title">{{song.author.name}}-{{song.title}}</h5>
-              <p class="card-text">
-                {{song.content|truncatewords:25|linebreaks}}
-              </p>
-              <a href="##" class="btn btn-primary">Добавить в избранное</a>
-              <a href="{% url 'update_song' slug=song.slug %}" class="btn btn-primary">Редактировать</a>
-              <a href="{% url 'delete_song' slug=song.slug %}" class="btn btn-primary">Удалить</a>
-              <h5 class="card-title">
-                {{song.difficult.name}}
-                {% with song.chords.all as chords%}
-                  {% if chords%}
-                    {% for chord in chords%}
-                      {{chord.name}}
-                    {% endfor %}
-                  {% endif %}
-                {% endwith %}
-              </h5>
+              <div class="card-body">
+                <h5 class="card-title">{{song.author.name}}-{{song.title}}</h5>
+                <p class="card-text">
+                  {{song.content|truncatewords:25|linebreaks}}
+                </p>
+                <a href="##" class="btn btn-primary">Добавить в избранное</a>
+                <a href="{% url 'update_song' slug=song.slug %}" class="btn btn-primary">Редактировать</a>
+                <a href="{% url 'delete_song' slug=song.slug %}" class="btn btn-primary">Удалить</a>
+                <h5 class="card-title">
+                  {{song.difficult.name}}
+                  {% with song.chords.all as chords%}
+                    {% if chords%}
+                      {% for chord in chords%}
+                        {{chord.name}}
+                      {% endfor %}
+                    {% endif %}
+                  {% endwith %}
+                </h5>
+              </div>
             </div>
-          </div>
-        </a>
-      </div>
-      {% endfor%}
+          </a>
+        </div>
+        {% endfor%}
+      {% else %}
+        <div class="col text-center">
+          <h1>Нет песен</h1>
+        </div>
+      {% endif %}
     </div>
   </div>
 </section>
