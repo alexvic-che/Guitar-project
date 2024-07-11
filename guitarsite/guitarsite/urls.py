@@ -23,7 +23,8 @@ from guitarsite import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("__debug__/", include("debug_toolbar.urls")),
-    path("", include("guitar.urls"))
+    path("", include("guitar.urls")),
+    path("users/", include("users.urls", namespace='users'))
 ]
 
 if settings.DEBUG:
