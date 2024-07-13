@@ -5,7 +5,7 @@ class AddSongForm(forms.ModelForm):
 
     class Meta:
         model = Songs
-        fields = ['title','slug','content','card_image','is_published','difficult','chords','author']
+        fields = ['title','content','card_image','is_published','difficult','chords','author']
 
 
 

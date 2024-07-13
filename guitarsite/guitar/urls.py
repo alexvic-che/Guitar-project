@@ -7,7 +7,7 @@ urlpatterns = [
     path("about/",views.about, name = "about"),
     path("song/<slug:song_slug>/", views.ShowSong.as_view(), name="song"),
     path("songs/", views.ShowSongs.as_view(), name="songs"),
-
+    path('songs/user_songs/<int:user_author_id>/', views.ShowUserSongs.as_view(), name='user_songs'),
     path("songs/difficult/<slug:difficult_slug>/", views.ShowSongs.as_view(), name="songs_by_difficulty"),
     path("songs/author/<slug:author_slug>/", views.ShowSongs.as_view(), name="songs_by_author"),
     path("add_song/", views.AddSong.as_view(), name="add_song"),

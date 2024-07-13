@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth import get_user_model
 
 class PublishedModel(models.Manager):
     def get_queryset(self):
@@ -20,6 +21,7 @@ class Songs(models.Model):
     difficult = models.ForeignKey("Difficulty", on_delete=models.PROTECT, related_name="songs", verbose_name="Сложность")
     chords = models.ManyToManyField("Chords", related_name="songs")
     author = models.ForeignKey("Authors", on_delete=models.PROTECT, related_name="songs", verbose_name="Автор")
+    user_author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, related_name='songs', null=True, default=None)
 
     objects = models.Manager()
     published = PublishedModel()

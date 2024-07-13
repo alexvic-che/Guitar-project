@@ -1,10 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseNotFound
 from django.urls import reverse, reverse_lazy
-from django.template.defaultfilters import slugify
 from django.views import View
 from django.views.generic import ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
 from django.core.paginator import Paginator
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import get_user_model
+from transliterate import slugify
 
 from .models import Songs, Difficulty, Authors
 from .forms import AddSongForm
@@ -25,7 +27,7 @@ def about(request):
 class ShowSongs(ListView):
     template_name = 'guitar/all_songs.html'
     context_object_name = "songs"
-    paginate_by = 3
+    paginate_by = 6
 
     def get_queryset(self):
         queryset = Songs.published.all()
@@ -56,6 +58,20 @@ class ShowSongs(ListView):
 
         return context
 
+class ShowUserSongs(ListView):
+    template_name = 'guitar/user_songs.html'
+    context_object_name = "songs"
+    paginate_by = 6
+    def get_context_data(self,**kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user_author'] = get_user_model().objects.filter(pk=self.kwargs['user_author_id'])[0]
+        return context
+
+    def get_queryset(self):
+        user = get_user_model().objects.filter(pk=self.kwargs['user_author_id'])[0]
+        queryset = Songs.published.filter(user_author=user)
+        return queryset
+
 
 class ShowSong(DetailView):
     model = Songs
@@ -67,15 +83,22 @@ class ShowSong(DetailView):
         return get_object_or_404(Songs.published, slug = self.kwargs[self.slug_url_kwarg])
 
 
-class AddSong(CreateView):
+class AddSong(LoginRequiredMixin, CreateView):
     template_name = "guitar/add_song.html"
     form_class = AddSongForm
     success_url = reverse_lazy('index')
     extra_context = {
         "add": 1
     }
+    login_url = 'users:login'
 
-class UpdateSong(UpdateView):
+    def form_valid(self, form):
+        w = form.save(commit=False)
+        w.user_author = self.request.user
+        w.slug = slugify(f'{w.title}')
+        return super().form_valid(form)
+
+class UpdateSong(LoginRequiredMixin, UpdateView):
     model = Songs
     fields = ['title','slug','content','card_image','is_published','difficult','chords','author']
     success_url = reverse_lazy('index')
@@ -83,14 +106,16 @@ class UpdateSong(UpdateView):
     extra_context = {
         "update":1
     }
+    login_url = 'users:login'
 
-class DeleteSong(DeleteView):
+class DeleteSong(LoginRequiredMixin, DeleteView):
     model = Songs
     success_url = reverse_lazy('index')
     template_name = "guitar/add_song.html"
     extra_context = {
         "delete": 1
     }
+    login_url = 'users:login'
 
 
 

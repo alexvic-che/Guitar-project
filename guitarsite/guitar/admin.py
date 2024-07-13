@@ -15,7 +15,7 @@ class SongsAdmin(admin.ModelAdmin):
     actions = ["set_published", "set_draft"]
     search_fields = ["title", "author__name"]
     list_filter = ["is_published", "difficult", "author"]
-    fields = ["title","slug","content","card_image", "card_imagess" ,"author","difficult","is_published","chords"]
+    fields = ["title","slug","content","card_image", "card_imagess" ,"author","difficult","is_published","chords", 'user_author']
     prepopulated_fields = {"slug": ("title",)}
     filter_horizontal = ["chords"]
     save_on_top = True

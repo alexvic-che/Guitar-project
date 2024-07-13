@@ -8,6 +8,11 @@
       <pre>{{ song.content }}</pre>
     </div>
     <div class="col-6">
+      {% if song.user_author%}
+        <a class="nav-link" href="{% url 'user_songs' user_author_id=song.user_author.id %}"><h1>Добавил:{{song.user_author.username}}</h1></a>
+      {% else %}
+        <h1>Добавил: Неизвсетный автор</h1>
+      {% endif %}
       <h1>Аккорды</h1>
       {% with song.chords.all as chords%}
         {% if chords%}
