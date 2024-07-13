@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<h1>Поздравляю,{{reg_user.username}}, вы успешно зарегестрировались на guitarsite. Войдите в свой аккаунт</h1>
+<p><a href="{% url 'users:login' %}"><button type="submit">Войти</button></p></a>
+
+
+{% endblock content%}
