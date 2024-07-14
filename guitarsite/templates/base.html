@@ -94,7 +94,7 @@
                   ><i class="fa-regular fa-user"></i
                 ></a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">{{ user.username }}|Личный кабинет</a></li>
+                  <li><a class="dropdown-item" href="{% url 'users:profile'%}">{{ user.username }}|Личный кабинет</a></li>
                   <li><a class="dropdown-item" href="{% url 'users:logout'%}">Выйти</a></li>
                 </ul>
               </li>
