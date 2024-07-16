@@ -12,8 +12,7 @@ import string
 
 
 from .models import Songs, Difficulty, Authors
-from .forms import AddSongForm
-
+from .forms import AddSongForm, ContactForm
 
 
 class Index(ListView):
@@ -124,6 +123,14 @@ class DeleteSong(LoginRequiredMixin, DeleteView):
     }
     login_url = 'users:login'
 
+class ContactFormView(LoginRequiredMixin, FormView):
+    form_class = ContactForm
+    template_name = "guitar/contact.html"
+    success_url = reverse_lazy('index')
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
 
 
 def not_found_page(request, exception):

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     'guitar',
     'users',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -85,8 +86,12 @@ WSGI_APPLICATION = 'guitarsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'guitarsite_db',
+        "USER": "guitarsite",
+        "PASSWORD": '1234',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 

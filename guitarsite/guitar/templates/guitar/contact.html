@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container ">
+  <div class="form-add-song">
+    <form action="" method="POST">
+      {% csrf_token %}
+        {{ form.as_p}}
+        <p><button type="submit">Отправить</button></p>
+    </form>
+  </div>
+
+
+</div>
+
+{% endblock content%}

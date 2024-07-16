@@ -13,6 +13,6 @@ urlpatterns = [
     path("add_song/", views.AddSong.as_view(), name="add_song"),
     path("update_song/<slug:slug>/", views.UpdateSong.as_view(), name="update_song"),
     path("delete_song/<slug:slug>/", views.DeleteSong.as_view(), name="delete_song"),
-
+    path("contact/", views.ContactFormView.as_view(), name='contact')
 ]
 
