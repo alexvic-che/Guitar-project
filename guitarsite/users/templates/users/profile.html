@@ -2,9 +2,14 @@
 <div class="container ">
 
   <div class="form-login">
-    <form action="" method="POST">
+    <form action="" method="POST", enctype="multipart/form-data">
 
         {% csrf_token %}
+        {% if user.photo %}
+            <p><img src="{{ user.photo.url }}"></p>
+        {% else %}
+            <p><img src="{{ default_image }}"></p>
+        {% endif %}
         {{ form.as_p}}
         <p><button type="submit">Сохранить</button></p>
     </form>

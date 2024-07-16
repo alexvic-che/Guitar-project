@@ -15,7 +15,7 @@ from .forms import AddSongForm
 class Index(ListView):
     template_name = "guitar/index.html"
     context_object_name = "songs"
-    allow_empty = False
+
     def get_queryset(self):
         return Songs.published.all()[:6]
 
