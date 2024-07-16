@@ -6,10 +6,14 @@ from django.views.generic import ListView, DetailView, FormView, CreateView, Upd
 from django.core.paginator import Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
-from transliterate import slugify
+from transliterate import slugify, translit
+import string
+
+
 
 from .models import Songs, Difficulty, Authors
 from .forms import AddSongForm
+
 
 
 class Index(ListView):
@@ -95,7 +99,10 @@ class AddSong(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         w = form.save(commit=False)
         w.user_author = self.request.user
-        w.slug = slugify(f'{w.title}')
+        tit = w.title
+        if tit[0] in string.ascii_letters:
+            tit = translit(tit, 'ru')
+        w.slug = slugify(f'{tit}')
         return super().form_valid(form)
 
 class UpdateSong(LoginRequiredMixin, UpdateView):

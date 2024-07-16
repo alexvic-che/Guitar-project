@@ -1,7 +1,7 @@
 from django.contrib import admin, messages
 from django.utils.safestring import mark_safe
 
-from .models import Songs, Difficulty, Authors
+from .models import Songs, Difficulty, Authors, Chords
 
 
 @admin.register(Songs)
@@ -66,6 +66,7 @@ class DifficultyAdmin(admin.ModelAdmin):
     list_display = ["name"]
     list_display_links = ["name"]
     list_per_page = 10
+    prepopulated_fields = {"slug": ("name",)}
 
 
 @admin.register(Authors)
@@ -73,3 +74,9 @@ class AuthorsAdmin(admin.ModelAdmin):
     list_display = ["name"]
     list_display_links = ["name"]
     list_per_page = 10
+    prepopulated_fields = {"slug": ("name",)}
+
+@admin.register(Chords)
+class AuthorsAdmin(admin.ModelAdmin):
+    list_display = ["name"]
+    prepopulated_fields = {"slug": ("name",)}

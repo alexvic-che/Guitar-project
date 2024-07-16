@@ -1,0 +1,1012 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-07-16T13:08:28.400Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Сложно",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-07-16T13:08:34.813Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Легко",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-07-16T13:08:42.397Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Средняя",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-07-16T13:09:18.774Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "Виктор Цой",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-07-16T13:09:24.104Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "Бумбокс",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-07-16T13:09:31.864Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "3",
+    "object_repr": "Гречка",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2024-07-16T13:09:35.198Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "4",
+    "object_repr": "Нервы",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2024-07-16T13:09:41.053Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "5",
+    "object_repr": "The animals",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2024-07-16T13:10:15.659Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "6",
+    "object_repr": "Tom Odel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2024-07-16T13:10:23.788Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "7",
+    "object_repr": "Алексей Понамарев",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2024-07-16T13:14:10.344Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "C",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2024-07-16T13:14:13.778Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Am",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2024-07-16T13:14:18.884Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "D",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2024-07-16T13:14:20.954Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Dm",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2024-07-16T13:14:22.269Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "F",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2024-07-16T13:14:25.040Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "G",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2024-07-16T13:14:28.261Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "E",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2024-07-16T13:14:30.452Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "8",
+    "object_repr": "Em",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2024-07-16T13:14:45.889Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Мы не ангелы",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 4,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 4,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 4,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 4,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 5,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 5,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 5,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 5,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add Автор песни",
+    "content_type": 6,
+    "codename": "add_authors"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change Автор песни",
+    "content_type": 6,
+    "codename": "change_authors"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete Автор песни",
+    "content_type": 6,
+    "codename": "delete_authors"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view Автор песни",
+    "content_type": 6,
+    "codename": "view_authors"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add chords",
+    "content_type": 7,
+    "codename": "add_chords"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change chords",
+    "content_type": 7,
+    "codename": "change_chords"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete chords",
+    "content_type": 7,
+    "codename": "delete_chords"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view chords",
+    "content_type": 7,
+    "codename": "view_chords"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add Сложность песни",
+    "content_type": 8,
+    "codename": "add_difficulty"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change Сложность песни",
+    "content_type": 8,
+    "codename": "change_difficulty"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete Сложность песни",
+    "content_type": 8,
+    "codename": "delete_difficulty"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view Сложность песни",
+    "content_type": 8,
+    "codename": "view_difficulty"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add Песня",
+    "content_type": 9,
+    "codename": "add_songs"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change Песня",
+    "content_type": 9,
+    "codename": "change_songs"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete Песня",
+    "content_type": 9,
+    "codename": "delete_songs"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view Песня",
+    "content_type": 9,
+    "codename": "view_songs"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 10,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 10,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 10,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 10,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "guitar",
+    "model": "authors"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "guitar",
+    "model": "chords"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "guitar",
+    "model": "difficulty"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "guitar",
+    "model": "songs"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "users",
+    "model": "user"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pm3ihyiabj965piqv6m04ax68wg57q0b",
+  "fields": {
+    "session_data": ".eJxVjL0KwzAQg9_FczG--L9j9zyDOduXOm1xIE6m0nevAxlaBBr0SXqzgPtWwt5oDXNmVwbs8ptFTE-qB8gPrPeFp6Vu6xz5UeEnbXxcMr1uZ_fvoGArfe0VmS7lfLQekpHJOjl004AkFRidE4JGGiZwUmirLSgHk_IChAXJPl_D-DZe:1sTht8:q6R1XoHnf9fVDhIFsP33_W2abZW9AJek5B0S1NiUQns",
+    "expire_date": "2024-07-30T13:06:38.793Z"
+  }
+},
+{
+  "model": "guitar.songs",
+  "pk": 1,
+  "fields": {
+    "title": "Мы не ангелы",
+    "slug": "my-ne-angely",
+    "content": "Ты открывал ночь\r\nВсе что могли позволить\r\nМаски срывал прочь\r\nДушу держал в неволе\r\n\r\nПусть на щеке кровь\r\nТы свалишь на помаду\r\nК черту барьер слов\r\nАнгелу слов не надо\r\n\r\nА мы не ангелы парень\r\nНет, мы не ангелы\r\nТемные твари\r\nИ сорваны планки\r\n\r\nНо, если нас спросят\r\nЧего бы хотели мы?\r\nМы бы взлетели\r\nМы бы взлетели\r\n\r\nВедь мы не ангелы парень\r\nНет, мы не ангелы\r\nТам на пожаре\r\nУтратили ранги мы\r\n\r\nНету к таким ни любви, ни доверия\r\nЛюди глядят на наличие перьев\r\n\r\nМы не ангелы парень\r\n\r\nСотни чужих крыш\r\nЧто ты искал там парень?\r\nТы так давно спишь\r\nСлишком давно для твари\r\n\r\nМожет пора вниз?\r\nТам где ты дышишь телом\r\nБрось свой пустой лист\r\nТвари не ходят в белом\r\n\r\nА мы не ангелы парень\r\nНет, мы не ангелы\r\nТемные твари\r\nИ сорваны планки\r\n\r\nНо, если нас спросят\r\nЧего бы хотели мы?\r\nМы бы взлетели\r\nМы бы взлетели\r\n\r\nВедь мы не ангелы парень\r\nНет, мы не ангелы\r\nТам на пожаре\r\nУтратили ранги мы\r\n\r\nНету к таким ни любви, ни доверия\r\nЛюди глядят на наличие перьев\r\nМы не ангелы парень",
+    "card_image": "card_images/Мы_не_ангелы.jpeg",
+    "time_create": "2024-07-16T13:14:45.886Z",
+    "time_update": "2024-07-16T13:16:34.789Z",
+    "is_published": true,
+    "difficult": 2,
+    "author": 7,
+    "user_author": 1,
+    "chords": [
+      6
+    ]
+  }
+},
+{
+  "model": "guitar.songs",
+  "pk": 2,
+  "fields": {
+    "title": "Вахтерам",
+    "slug": "vahteram",
+    "content": "Тебе не нравится дым — чёрт с ним\r\nОн убивает слова, кругом голова\r\nУже разносит молва по дворам\r\nЧто между нами чивава\r\n\r\nО чём с тобой говорить? Потеряли нить\r\nБыть не собой перестать и дома спать\r\nНас не измерить на глаз, а сейчас\r\nЗачем мы давим на тормоз, не на газ?\r\n\r\nВопрос извечный — зачем да почему\r\nЯ понемногу с ума, ты не сама\r\nА эти ночи в Крыму теперь кому?\r\nЯ, если встречу, потом передам ему\r\n\r\nПисклявый твой голосок как электрошок\r\nЧто я бухой без вина — твоя вина\r\nТеперь узнает страна до темна\r\nИм донесут обо всём на FM-волнах\r\n\r\nЯ помню: белые обои, чёрная посуда\r\nНас в хрущёвке двое, кто мы и откуда, откуда?\r\nЗадвигаем шторы, кофеёк, плюшки стынут\r\nОбъясните теперь нам, вахтёры, почему я на ней так сдвинут\r\n\r\nДавай вот так просидим до утра\r\nНе уходи, погоди — но мне пора\r\nИ если выход один впереди\r\nТо почему мы то холод, то жара?\r\n\r\nРаскладывать по местам я устал\r\nИ поворачивать вспять, ну вот опять\r\nПрикосновения плавили мой металл\r\nТы элемент номер пять, ни дать ни взять\r\n\r\nИдёт к финалу игра в этот раз\r\nА ты всё так же молчишь, я говорю\r\nМинут 15 осталось до утра\r\nНе вызывай, так словлю и свалю\r\n\r\nПопробуем всё подшить, не ворошить\r\nМобильные номера постирать\r\nА уходить не спросив нету сил\r\nДавай попробуем заново всё собрать\r\n\r\nБелые обои, чёрную посуду\r\nНас в хрущёвке двое, кто мы и откуда, откуда?\r\nЗадвигай шторы, кофеёк, плюшки стынут\r\nОбъясните теперь нам, вахтёры, почему я на ней так сдвинут\r\n\r\nЯ помню: белые обои, чёрная посуда\r\nНас в хрущёвке двое, кто мы и откуда, откуда?\r\nЗадвигаем шторы, кофеёк, плюшки стынут\r\nОбъясните теперь нам, вахтёры, почему я на ней так сдвинут\r\n\r\nБелые обои, чёрная посуда\r\nНас в хрущёвке двое, кто мы и откуда, откуда?\r\nЗадвигаем шторы, кофеёк, плюшки стынут\r\nОбъясните теперь нам, вахтёры, почему я на ней так сдвинут",
+    "card_image": "card_images/Вахтерам.jpeg",
+    "time_create": "2024-07-16T13:18:33.929Z",
+    "time_update": "2024-07-16T18:47:01.872Z",
+    "is_published": true,
+    "difficult": 2,
+    "author": 3,
+    "user_author": 1,
+    "chords": [
+      4
+    ]
+  }
+},
+{
+  "model": "guitar.songs",
+  "pk": 3,
+  "fields": {
+    "title": "Another Love",
+    "slug": "another-love",
+    "content": "I wanna take you somewhere so you know I care\r\nBut it's so cold and I don't know where\r\nI brought you daffodils in a pretty string\r\nBut they won't flower like they did last spring\r\n\r\nAnd I wanna kiss you, make you feel alright\r\nI'm just so tired to share my nights\r\nI wanna cry and I wanna love\r\nBut all my tears have been used up\r\n\r\nOn another love, another love\r\nAll my tears have been used up\r\n\r\nAnd if somebody hurts you, I wanna fight\r\nBut my hands been broken, one too many times\r\nSo I'll use my voice, I'll be so f*cking rude\r\nWords they always win, but I know I'll lose\r\n\r\nAnd I'd sing a song, that'd be just ours\r\nBut I sang 'em all to another heart\r\nAnd I wanna cry I wanna learn to love\r\nBut all my tears have been used up\r\n\r\nOn another love, another love\r\nAll my tears have been used up\r\n\r\nI wanna sing a song, that'd be just ours\r\nBut I sang 'em all to another heart\r\nAnd I wanna cry, I wanna fall in love\r\nBut all my tears have been used up\r\n\r\nOn another love, another love\r\nAll my tears have been used up",
+    "card_image": "card_images/another_love.webp",
+    "time_create": "2024-07-16T18:39:10.045Z",
+    "time_update": "2024-07-16T18:46:52.304Z",
+    "is_published": true,
+    "difficult": 1,
+    "author": 6,
+    "user_author": 1,
+    "chords": [
+      1
+    ]
+  }
+},
+{
+  "model": "guitar.songs",
+  "pk": 8,
+  "fields": {
+    "title": "The house of the rising sun",
+    "slug": "the-house-of-the-rising-sun",
+    "content": "There is a house in New Orleans\r\nThey call the Rising Sun\r\nAnd it's been the ruin of many a poor boy\r\nAnd God, I know I'm one\r\n\r\nMy mother was a tailor\r\nShe sewed my new blue jeans\r\nMy father was a gamblin' man\r\nDown in New Orleans\r\n\r\nNow the only thing a gambler needs\r\nIs a suitcase and a trunk\r\nAnd the only time he'll be satisfied\r\nIs when he's on a trump\r\n\r\nOh, mother, tell your children\r\nNot to do what I have done\r\nSpend your lives in sin and misery\r\nIn the House of the Rising Sun\r\n\r\nWell, I got one foot on the platform\r\nThe other foot on the train\r\nI'm goin' back to New Orleans\r\nTo wear that ball and chain\r\n\r\nWell, there is a house in New Orleans\r\nThey call the Rising Sun\r\nAnd it's been the ruin of many a poor boy\r\nAnd God, I know I'm one",
+    "card_image": "card_images/The_house_of_the_rising_sun.jpeg",
+    "time_create": "2024-07-16T18:43:43.920Z",
+    "time_update": "2024-07-16T18:46:41.274Z",
+    "is_published": true,
+    "difficult": 1,
+    "author": 5,
+    "user_author": 1,
+    "chords": [
+      2
+    ]
+  }
+},
+{
+  "model": "guitar.songs",
+  "pk": 9,
+  "fields": {
+    "title": "Люби меня люби",
+    "slug": "ljubi-menja-ljubi",
+    "content": "Непокорная моя любовь\r\nЛюбит не меня, уже который год\r\nТе же стены и цветы\r\nТе же люди и стихи\r\nТе же мысли и слова\r\nВслух\r\n\r\nЛюби меня, люби\r\nЖарким огнём\r\nНочью и днём\r\nСердце сжигая\r\n\r\nЛюби меня, люби\r\nНе улетай\r\nНе исчезай\r\nЯ умоляю\r\nЛюби меня, люби\r\nЛюби меня, люби\r\n\r\nНепокорная моя любовь\r\nЛюбит не меня уже который год\r\nТе же стены и цветы\r\nТе же люди и стихи\r\nТе же мысли и слова\r\nВслух\r\n\r\nЛюби меня, люби\r\nЖарким огнём\r\nНочью и днём\r\nСердце сжигая\r\nЛюби меня, люби\r\nНе улетай\r\nНе исчезай\r\nЯ умоляю\r\n\r\nЛюби меня, люби\r\nЛюби меня, люби\r\nЛюби меня, люби\r\nЛюби меня, люби\r\nЛюби меня, люби\r\n\r\nЖарким огнём\r\nНочью и днём\r\nСердце сжигая\r\nЛюби меня, люби\r\nНе улетай\r\nНе исчезай\r\nЯ умоляю\r\n\r\nЛюби меня, люби\r\nЖарким огнём\r\nНочью и днём\r\nСердце сжигая\r\nЛюби меня, люби\r\nНе улетай\r\nНе исчезай\r\n\r\nЯ умоляю\r\nЛюби меня, люби",
+    "card_image": "card_images/Люби_меня_люби_.jpeg",
+    "time_create": "2024-07-16T18:44:14.656Z",
+    "time_update": "2024-07-16T18:46:30.100Z",
+    "is_published": true,
+    "difficult": 2,
+    "author": 3,
+    "user_author": 1,
+    "chords": [
+      3
+    ]
+  }
+},
+{
+  "model": "guitar.songs",
+  "pk": 10,
+  "fields": {
+    "title": "Звезда по имени солнце",
+    "slug": "zvezda-po-imeni-solntse",
+    "content": "Белый снег, серый лед, на растрескавшейся земле.\r\nОдеялом лоскутным на ней - город в дорожной петле.\r\nА над городом плывут облака, закрывая небесный свет.\r\nА над городом - желтый дым, городу две тысячи лет,\r\nПрожитых под светом Звезды по имени Солнце...\r\n\r\nИ две тысячи лет - война, война без особых причин.\r\nВойна - дело молодых, лекарство против морщин.\r\nКрасная, красная кровь - через час уже просто земля,\r\nЧерез два на ней цветы и трава, через три она снова жива\r\nИ согрета лучами Звезды по имени Солнце...\r\n\r\nИ мы знаем, что так было всегда, что Судьбою больше любим,\r\nКто живет по законам другим и кому умирать молодым.\r\nОн не помнит слово \"да\" и слово \"нет\", он не помнит ни чинов, ни имен.\r\nИ способен дотянуться до звезд, не считая, что это сон,\r\nИ упасть, опаленным Звездой по имени Солнце...",
+    "card_image": "card_images/Звезда_по_имени_солнце.jpeg",
+    "time_create": "2024-07-16T18:44:43.668Z",
+    "time_update": "2024-07-16T18:44:43.668Z",
+    "is_published": true,
+    "difficult": 1,
+    "author": 1,
+    "user_author": 1,
+    "chords": [
+      4
+    ]
+  }
+},
+{
+  "model": "guitar.songs",
+  "pk": 11,
+  "fields": {
+    "title": "Самый дорогой человек",
+    "slug": "samyj-dorogoj-chelovek",
+    "content": "И пропадает в миллионах навек, когда-то\r\nСамый дорогой человек, правда\r\nСлишком глубокая рана\r\nЗабывать друг друга пора нам\r\n\r\nПропадает в миллионах навек, когда-то\r\nСамый дорогой человек, правда\r\nСлишком глубокая рана\r\nЗабывать друг друга пора нам\r\n\r\nЗадержи дыхание на миг, ощути какая глубина\r\nВ моей голове идёт война\r\nЯ не принимаю ничего из того, что чувствую сейчас\r\nПроводив тебя в последний раз\r\n\r\nИ пропадает в миллионах навек, когда-то\r\nСамый дорогой человек, правда\r\nСлишком глубокая рана\r\nЗабывать друг друга пора нам\r\n\r\nПропадает в миллионах навек, когда-то\r\nСамый дорогой человек, правда\r\nСлишком глубокая рана\r\nЗабывать друг друга\r\n\r\nИ пропадает в миллионах навек когда-то\r\nСамый дорогой человек, правда\r\nСлишком глубокая рана\r\nЗабывать друг друга пора нам\r\n\r\nПропадает в миллионах на век когда-то\r\nСамый дорогой человек, правда\r\nСлишком глубокая рана\r\nЗабывать друг друга пора нам\r\n\r\nЯ слышу твое сердце по ночам\r\nТобой пропитан каждый сантиметр\r\nЯ нахожу тебя во всех вещах\r\n\r\nЯ тебя никем не заменю\r\nВнутри меня как будто гаснет свет\r\nСрываюсь и опять тебе звоню\r\n\r\nТы молчишь\r\nЯ больше тебе никто\r\nТы больше мне ничего не простишь\r\n\r\nИ пропадает в миллионах навек, когда-то\r\nСамый дорогой человек, правда\r\nСлишком глубокая рана\r\nЗабывать друг друга пора нам\r\n\r\nПропадает в миллионах навек, когда-то\r\nСамый дорогой человек, правда\r\nСлишком глубокая рана\r\nЗабывать друг друга пора нам!\r\n\r\nЯ рана! Ты рана!\r\nЯ рана-ааа!\r\nЯ рана! Ты рана!\r\nЯ рана-ааа!\r\n\r\nПропадает в миллионах навек, когда-то\r\nСамый дорогой человек, правда\r\nСлишком глубокая рана\r\nЗабывать друг друга",
+    "card_image": "card_images/Самыи_дорогои_человек.jpeg",
+    "time_create": "2024-07-16T18:45:05.252Z",
+    "time_update": "2024-07-16T18:45:05.252Z",
+    "is_published": true,
+    "difficult": 1,
+    "author": 4,
+    "user_author": 1,
+    "chords": [
+      2
+    ]
+  }
+},
+{
+  "model": "guitar.difficulty",
+  "pk": 1,
+  "fields": {
+    "name": "Сложно",
+    "slug": "slozhno"
+  }
+},
+{
+  "model": "guitar.difficulty",
+  "pk": 2,
+  "fields": {
+    "name": "Легко",
+    "slug": "legko"
+  }
+},
+{
+  "model": "guitar.difficulty",
+  "pk": 3,
+  "fields": {
+    "name": "Средняя",
+    "slug": "srednyaya"
+  }
+},
+{
+  "model": "guitar.chords",
+  "pk": 1,
+  "fields": {
+    "name": "C",
+    "slug": "c"
+  }
+},
+{
+  "model": "guitar.chords",
+  "pk": 2,
+  "fields": {
+    "name": "Am",
+    "slug": "am"
+  }
+},
+{
+  "model": "guitar.chords",
+  "pk": 3,
+  "fields": {
+    "name": "D",
+    "slug": "d"
+  }
+},
+{
+  "model": "guitar.chords",
+  "pk": 4,
+  "fields": {
+    "name": "Dm",
+    "slug": "dm"
+  }
+},
+{
+  "model": "guitar.chords",
+  "pk": 5,
+  "fields": {
+    "name": "F",
+    "slug": "f"
+  }
+},
+{
+  "model": "guitar.chords",
+  "pk": 6,
+  "fields": {
+    "name": "G",
+    "slug": "g"
+  }
+},
+{
+  "model": "guitar.chords",
+  "pk": 7,
+  "fields": {
+    "name": "E",
+    "slug": "e"
+  }
+},
+{
+  "model": "guitar.chords",
+  "pk": 8,
+  "fields": {
+    "name": "Em",
+    "slug": "em"
+  }
+},
+{
+  "model": "guitar.authors",
+  "pk": 1,
+  "fields": {
+    "name": "Виктор Цой",
+    "slug": "viktor-coj"
+  }
+},
+{
+  "model": "guitar.authors",
+  "pk": 2,
+  "fields": {
+    "name": "Бумбокс",
+    "slug": "bumboks"
+  }
+},
+{
+  "model": "guitar.authors",
+  "pk": 3,
+  "fields": {
+    "name": "Гречка",
+    "slug": "grechka"
+  }
+},
+{
+  "model": "guitar.authors",
+  "pk": 4,
+  "fields": {
+    "name": "Нервы",
+    "slug": "nervy"
+  }
+},
+{
+  "model": "guitar.authors",
+  "pk": 5,
+  "fields": {
+    "name": "The animals",
+    "slug": "the-animals"
+  }
+},
+{
+  "model": "guitar.authors",
+  "pk": 6,
+  "fields": {
+    "name": "Tom Odel",
+    "slug": "tom-odel"
+  }
+},
+{
+  "model": "guitar.authors",
+  "pk": 7,
+  "fields": {
+    "name": "Алексей Понамарев",
+    "slug": "aleksej-ponamarev"
+  }
+},
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$GTCyOaylmVgzu440uajMbH$8EVpWqSP/AT35NpElLtN5yJu4oNY0cmrwDSmkyV3zaM=",
+    "last_login": "2024-07-16T13:06:38.771Z",
+    "is_superuser": true,
+    "username": "aleksandr",
+    "first_name": "",
+    "last_name": "",
+    "email": "alexvic.che@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-07-16T12:50:10.669Z",
+    "photo": "users/2024/07/16/ава1.jpeg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$GMsvjsuIufnTGaQv2z8QQE$pUUEPr1aTDDXWh/HVTV+3/0MiB6C7v5x7/dyaEQwJdM=",
+    "last_login": "2024-07-16T13:01:33.161Z",
+    "is_superuser": false,
+    "username": "user1",
+    "first_name": "frd",
+    "last_name": "sad",
+    "email": "guitarsite996@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-07-16T13:01:23.699Z",
+    "photo": "",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
