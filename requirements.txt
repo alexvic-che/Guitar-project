@@ -4,6 +4,8 @@ decorator==5.1.1
 Django==5.0.6
 django-debug-toolbar==4.4.2
 django-extensions==3.2.3
+django-ranged-response==0.2.0
+django-simple-captcha==0.6.0
 exceptiongroup==1.2.1
 executing==2.0.1
 ipython==8.25.0
@@ -11,13 +13,17 @@ jedi==0.19.1
 matplotlib-inline==0.1.7
 parso==0.8.4
 pexpect==4.9.0
+pillow==10.4.0
 prompt_toolkit==3.0.45
+psycopg2-binary==2.9.9
 ptyprocess==0.7.0
 pure-eval==0.2.2
 Pygments==2.18.0
 six==1.16.0
+slug==2.0
 sqlparse==0.5.0
 stack-data==0.6.3
 traitlets==5.14.3
+transliterate==1.10.2
 typing_extensions==4.12.1
 wcwidth==0.2.13
