@@ -1,15 +1,11 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-<div class="container ">
-  <div class="form-login">
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ form.as_p}}
-        <p><button type="submit">Войти</button></p>
-        <p><a href="{% url 'users:password_reset' %}">Забыли пароль?</a></p>
-    </form>
-  </div>
+{% extends 'base-form.html' %} {% load static %} {% block form-content %}
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p}}
+  <p><button type="submit" class="btn btn-success">Войти</button></p>
+  <p><a href="{% url 'users:password_reset' %}">Забыли пароль?</a></p>
+</form>
+
+{% endblock form-content %}
 
 
-</div>
-
-{% endblock content%}

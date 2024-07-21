@@ -12,7 +12,7 @@ import string
 
 
 from .models import Songs, Difficulty, Authors
-from .forms import AddSongForm, ContactForm
+from .forms import AddSongForm, ContactForm, EditSongForm
 
 
 class Index(ListView):
@@ -105,8 +105,8 @@ class AddSong(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 class UpdateSong(LoginRequiredMixin, UpdateView):
+    form_class = EditSongForm
     model = Songs
-    fields = ['title','slug','content','card_image','is_published','difficult','chords','author']
     success_url = reverse_lazy('index')
     template_name = "guitar/add_song.html"
     extra_context = {

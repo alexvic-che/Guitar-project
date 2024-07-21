@@ -13,13 +13,13 @@ class Songs(models.Model):
 
     title = models.CharField(max_length=50, verbose_name="Название песни")
     slug = models.SlugField(max_length=255, unique=True,db_index=True)
-    content = models.TextField(blank=True)
+    content = models.TextField(blank=True, verbose_name="Текст песни")
     card_image = models.ImageField(upload_to="card_images", blank=True, default=None, null=True, verbose_name="Картинка карточки")
     time_create = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
     time_update = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(choices=tuple(map(lambda x:(bool(x[0]),x[1]),Status.choices)), default=Status.DRAFT, verbose_name="Публикация")
     difficult = models.ForeignKey("Difficulty", on_delete=models.PROTECT, related_name="songs", verbose_name="Сложность")
-    chords = models.ManyToManyField("Chords", related_name="songs")
+    chords = models.ManyToManyField("Chords", related_name="songs", verbose_name="Аккорды")
     author = models.ForeignKey("Authors", on_delete=models.PROTECT, related_name="songs", verbose_name="Автор")
     user_author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, related_name='songs', null=True, default=None)
 

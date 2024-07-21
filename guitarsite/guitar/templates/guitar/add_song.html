@@ -1,26 +1,47 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-<div class="container ">
-  <div class="form-add-song">
-    <form action="" method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      {% if add %}
-        {{ form.as_p}}
-        <p><button type="submit">Отправить</button></p>
-      {% endif %}
-      {% if update %}
-        {{ form.as_p}}
-        <p><button type="submit">Обновить</button></p>
-      {% endif %}
-      {% if delete %}
-        <p>Удаляемая запись: "{{ object }}"</p>
-        {{ form.as_p}}
-        <p><button type="submit">Удалить</button></p>
-      {% endif %}
+{% extends 'base-form.html' %} {% load static %} {% block form-content %}
 
-    </form>
+<form action="" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="form-error">{{ form.non_field_errors }}</div>
+  {% for field in form%}
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      {% if field.field.widget.input_type == "checkbox" %}
+      <div class="col-3 form-check form-switch">
+        <p>
+          {{ field }}
+          <label class="form-check-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        </p>
+      </div>
+      {% else %}
+      <div class="col-8">
+        <p><label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}</p>
+      </div>
+      {% endif %}
+      <div class="form-error">{{ field.errors }}</div>
+    </div>
   </div>
-
   
-</div>
+  {% endfor %}
 
-{% endblock content%}
+
+  {% if add %}
+    
+    <p><button type="submit" class="btn btn-primary">Отправить</button></p>
+  
+  {% elif update %}
+    
+    <p><button type="submit" class="btn btn-success">Обновить</button></p>
+  
+  {% elif delete %}
+    <h3>Удаляемая запись: "{{ object }}"</h3>
+    
+    <p><button type="submit" class="btn btn-danger">Удалить</button></p>
+  {% endif %}
+
+</form>
+
+
+{% endblock form-content %}
+
+   

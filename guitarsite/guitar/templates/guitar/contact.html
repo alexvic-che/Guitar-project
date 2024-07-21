@@ -1,14 +1,30 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-<div class="container ">
-  <div class="form-add-song">
-    <form action="" method="POST">
-      {% csrf_token %}
-        {{ form.as_p}}
-        <p><button type="submit">Отправить</button></p>
-    </form>
+{% extends 'base-form.html' %} {% load static %} {% block form-content %}
+<form action="" method="POST">
+  {% csrf_token %}
+  
+    
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="form-error">{{ form.non_field_errors }}</div>
+      {% for field in form%}
+      <div class="col-8">
+        {% if forloop.last%}
+        <p><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}</p>
+        {% else %}
+        <div class="form-floating mb-3">
+          {{ field }}
+          <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        </div>
+        {% endif %}
+      </div>
+      <div class="form-error">{{ field.errors }}</div>
+      {% endfor %}
+    </div>
   </div>
 
+ 
+    <p><button type="submit" class="btn btn-primary">Отправить</button></p>
+</form>
 
-</div>
 
-{% endblock content%}
+{% endblock form-content %}

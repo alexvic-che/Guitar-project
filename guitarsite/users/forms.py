@@ -27,12 +27,22 @@ class RegisterUserForm(UserCreationForm):
             return self.cleaned_data['email']
 
 class ProfileUserForm(forms.ModelForm):
-    username = forms.CharField(disabled=True, label='Логин')
-    email = forms.CharField(disabled=True, label='E-mail')
+    username = forms.CharField(disabled=True, label='Логин', widget=forms.TextInput(attrs={"class": "form-control",
+                                                                                        "placeholder": "Ваш ник"}))
+    email = forms.CharField(disabled=True, label='E-mail', widget=forms.EmailInput(attrs={"class": "form-control",
+                                                                                        "placeholder": "Ваш email"}))
 
     class Meta:
         model = get_user_model()
         fields = ['photo','username', 'email', 'first_name', 'last_name']
+        widgets = {
+            "photo": forms.ClearableFileInput(attrs={"class": "form-control"}),
+
+            "first_name": forms.TextInput(attrs={"class": "form-control",
+                                            "placeholder": "Ваш ник"}),
+            "last_name": forms.TextInput(attrs={"class": "form-control",
+                                            "placeholder": "Ваш ник"}),
+        }
 
 class UserPasswordChangeForm(PasswordChangeForm):
     old_password = forms.CharField(label='Старый пароль', widget=forms.PasswordInput())
