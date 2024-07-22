@@ -1,9 +1,24 @@
 {% extends 'base-form.html' %} {% load static %} {% block form-content %}
 <form action="" method="POST">
   {% csrf_token %}
-  {{ form.as_p}}
+
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="form-error">{{ form.non_field_errors }}</div>
+      {% for field in form%}
+      <div class="col-8">
+        <div class="form-floating mb-3">
+          {{ field }}
+          <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        </div>
+      </div>
+      <div class="form-error">{{ field.errors }}</div>
+      {% endfor %}
+    </div>
+  </div>
+
   <p><button type="submit" class="btn btn-success">Войти</button></p>
-  <p><a href="{% url 'users:password_reset' %}">Забыли пароль?</a></p>
+  <p><a href="{% url 'users:password_reset' %}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Забыли пароль?</a></p>
 </form>
 
 {% endblock form-content %}

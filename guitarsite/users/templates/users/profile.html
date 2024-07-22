@@ -12,11 +12,16 @@
       <div class="form-error">{{ form.non_field_errors }}</div>
       {% for field in form%}
       <div class="col-8">
-        
-        <div class="form-floating mb-3">
+        {% if forloop.first %}
           {{ field }}
           <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
-        </div>
+        {% else %}
+          <div class="form-floating mb-3">
+            {{ field }}
+            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+          </div>
+        {% endif %}
+        
         
       </div>
       <div class="form-error">{{ field.errors }}</div>
@@ -27,7 +32,7 @@
   <p><button type="submit" class="btn btn-success">Сохранить</button></p>
   
 </form>
-<p><a href="{% url 'users:user_password_change'%}">Изменить пароль</a></p>
+<p><a href="{% url 'users:user_password_change'%}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Изменить пароль</a></p>
 
 {% endblock form-content %}
 
