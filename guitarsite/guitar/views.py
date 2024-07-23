@@ -4,7 +4,7 @@ from django.urls import reverse, reverse_lazy
 from django.views import View
 from django.views.generic import ListView, DetailView, FormView, CreateView, UpdateView, DeleteView
 from django.core.paginator import Paginator
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth import get_user_model
 from transliterate import slugify, translit
 import string
@@ -13,7 +13,7 @@ import string
 
 from .models import Songs, Difficulty, Authors
 from .forms import AddSongForm, ContactForm, EditSongForm
-
+from .utils import UserIsAuthorMixin
 
 class Index(ListView):
     template_name = "guitar/index.html"
@@ -86,7 +86,7 @@ class ShowSong(DetailView):
         return get_object_or_404(Songs.published, slug = self.kwargs[self.slug_url_kwarg])
 
 
-class AddSong(LoginRequiredMixin, CreateView):
+class AddSong(PermissionRequiredMixin,LoginRequiredMixin, CreateView):
     template_name = "guitar/add_song.html"
     form_class = AddSongForm
     success_url = reverse_lazy('index')
@@ -94,6 +94,7 @@ class AddSong(LoginRequiredMixin, CreateView):
         "add": 1
     }
     login_url = 'users:login'
+    permission_required = 'guitar.add_songs'
 
     def form_valid(self, form):
         w = form.save(commit=False)
@@ -104,7 +105,7 @@ class AddSong(LoginRequiredMixin, CreateView):
         w.slug = slugify(f'{tit}')
         return super().form_valid(form)
 
-class UpdateSong(LoginRequiredMixin, UpdateView):
+class UpdateSong(UserIsAuthorMixin,PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
     form_class = EditSongForm
     model = Songs
     success_url = reverse_lazy('index')
@@ -113,8 +114,9 @@ class UpdateSong(LoginRequiredMixin, UpdateView):
         "update":1
     }
     login_url = 'users:login'
+    permission_required = 'guitar.change_songs'
 
-class DeleteSong(LoginRequiredMixin, DeleteView):
+class DeleteSong(UserIsAuthorMixin,PermissionRequiredMixin, LoginRequiredMixin, DeleteView):
     model = Songs
     success_url = reverse_lazy('index')
     template_name = "guitar/add_song.html"
@@ -122,6 +124,7 @@ class DeleteSong(LoginRequiredMixin, DeleteView):
         "delete": 1
     }
     login_url = 'users:login'
+    permission_required = 'guitar.delete_songs'
 
 class ContactFormView(LoginRequiredMixin, FormView):
     form_class = ContactForm

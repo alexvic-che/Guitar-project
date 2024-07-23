@@ -7,6 +7,7 @@ from django.views.generic import CreateView
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import UpdateView
+from django.contrib.auth.models import Group
 
 from guitarsite import settings
 from .forms import LoginUserForm, RegisterUserForm, ProfileUserForm, UserPasswordChangeForm
@@ -25,6 +26,12 @@ class RegisterUser(CreateView):
     form_class = RegisterUserForm
     template_name = 'users/register.html'
     success_url = reverse_lazy('users:register_done')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        base_group, created = Group.objects.get_or_create(name='base_group')
+        self.object.groups.add(base_group)
+        return response
 
 def register_done(request):
     reg_user = get_user_model().objects.latest('id')
