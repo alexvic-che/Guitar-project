@@ -79,7 +79,7 @@
                 <a class="nav-link" href="{% url 'add_song' %}">Добавление песни</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Аппликатуры аккордов</a>
+                <a class="nav-link" href="{% url 'chords'%}">Аппликатуры аккордов</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item dropdown">

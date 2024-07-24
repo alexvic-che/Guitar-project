@@ -13,6 +13,9 @@ urlpatterns = [
     path("add_song/", views.AddSong.as_view(), name="add_song"),
     path("update_song/<slug:slug>/", views.UpdateSong.as_view(), name="update_song"),
     path("delete_song/<slug:slug>/", views.DeleteSong.as_view(), name="delete_song"),
-    path("contact/", views.ContactFormView.as_view(), name='contact')
+    path("contact/", views.ContactFormView.as_view(), name='contact'),
+    path("chords/", views.ShowAllChordsGroup.as_view(), name='chords'),
+    path("chords/<slug:chords_group_slug>/", views.ShowChordsByGroup.as_view(), name='chords_by_group'),
+
 ]
 

@@ -57,10 +57,24 @@ class Difficulty(models.Model):
 
 class Chords(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name="Аккорды")
+    designation = models.CharField(max_length=100, db_index=True,null=True,default=None, verbose_name="Обозначение")
     slug = models.SlugField(max_length=255, db_index=True, unique=True)
+    chord_image = models.ImageField(upload_to="chords_images", blank=True, default=None, null=True, verbose_name="Картинка аккорда")
+    chords_group = models.ForeignKey("ChordsGroup", on_delete=models.PROTECT, related_name="chords",blank=True, default=None, null=True)
 
     def __str__(self):
         return self.name
+class ChordsGroup(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=255, unique=True)
+    group_image = models.ImageField(upload_to="chords_group_images", blank=True, default=None, null=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('chords_by_group', kwargs={'chords_group_slug':self.slug})
+
 
 class Authors(models.Model):
     name = models.CharField(max_length=100, db_index=True, verbose_name="Автор")

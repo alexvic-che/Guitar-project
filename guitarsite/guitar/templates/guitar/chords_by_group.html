@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    {% for chord in chords %}
+    <div class="col-3">
+      
+      <div class="card cord-card text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{ chord.designation }}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">{{ chord.name }}</h6>
+          {% if chord.chord_image %}
+          <img
+            src="{{ chord.chord_image.url }}"
+            class="card-img-center"
+            alt="аккорды"
+          />
+          {% endif %}
+
+        </div>
+      </div>
+        
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content%}

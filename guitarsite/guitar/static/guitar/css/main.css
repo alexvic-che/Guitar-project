@@ -84,7 +84,13 @@ a:hover{
 .link-to-song{
     text-decoration: none;
 }
-
+.link-to-chords{
+    text-decoration: none;
+}
+.cord-card{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 /* card */
 

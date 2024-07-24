@@ -11,7 +11,7 @@ import string
 
 
 
-from .models import Songs, Difficulty, Authors
+from .models import Songs, Difficulty, Authors, Chords, ChordsGroup
 from .forms import AddSongForm, ContactForm, EditSongForm
 from .utils import UserIsAuthorMixin
 
@@ -135,6 +135,21 @@ class ContactFormView(LoginRequiredMixin, FormView):
         print(form.cleaned_data)
         return super().form_valid(form)
 
+class ShowAllChordsGroup(ListView):
+    template_name = 'guitar/all_chords.html'
+    context_object_name = "groups"
+
+
+    def get_queryset(self):
+        queryset = ChordsGroup.objects.all()
+        return queryset
+class ShowChordsByGroup(ListView):
+    template_name = 'guitar/chords_by_group.html'
+    context_object_name = "chords"
+
+    def get_queryset(self):
+        queryset = Chords.objects.filter(chords_group__slug=self.kwargs["chords_group_slug"])
+        return queryset
 
 def not_found_page(request, exception):
     return HttpResponseNotFound("<h1>Страница не найдена</h1>")

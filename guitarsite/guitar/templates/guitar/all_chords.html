@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    {% for group in groups %}
+    <div class="col-3">
+        <a href="{{group.get_absolute_url}}" class="link-to-chords">
+      <div class="card cord-card text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{ group.name }}</h5>
+          {% if group.group_image %}
+          <img
+            src="{{ group.group_image.url }}"
+            class="card-img-center"
+            alt="аккорды"
+          />
+          {% endif %}
+          
+        </div>
+      </div>
+        </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content%}
