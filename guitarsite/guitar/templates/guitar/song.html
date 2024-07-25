@@ -1,6 +1,5 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<style>
-</style>
+<style></style>
 <div class="container-lg">
   <div class="row">
     <div class="col-6">
@@ -9,18 +8,41 @@
     </div>
     <div class="col-6">
       {% if song.user_author%}
-        <a class="nav-link" href="{% url 'user_songs' user_author_id=song.user_author.id %}"><h1>Добавил:{{song.user_author.username}}</h1></a>
+      <a
+        class="nav-link"
+        href="{% url 'user_songs' user_author_id=song.user_author.id %}"
+        ><h1>Добавил:{{song.user_author.username}}</h1></a
+      >
       {% else %}
-        <h1>Добавил: Неизвсетный автор</h1>
+      <h1>Добавил: Неизвсетный автор</h1>
       {% endif %}
-      <h1>Аккорды</h1>
+      
       {% with song.chords.all as chords%}
-        {% if chords%}
+      {% if chords%}
+
+      <div class="container">
+        <div class="row">
+          <h1 class="text-center">Аккорды</h1>
           {% for chord in chords%}
-            <p>{{chord.name}}</p>
+          <div class="col-6">
+            <div class="card cord-card text-center">
+              <div class="card-body">
+                <h5 class="card-title">{{ chord.designation }}</h5>
+                {% if chord.chord_image %}
+                <img
+                  src="{{ chord.chord_image.url }}"
+                  class="card-img-center"
+                  alt="аккорды"
+                />
+                {% endif %}
+              </div>
+            </div>
+          </div>
           {% endfor %}
-        {% endif %}
-      {% endwith %}
+        </div>
+      </div>
+
+      {% endif %} {% endwith %}
     </div>
   </div>
 </div>

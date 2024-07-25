@@ -63,7 +63,7 @@ class Chords(models.Model):
     chords_group = models.ForeignKey("ChordsGroup", on_delete=models.PROTECT, related_name="chords",blank=True, default=None, null=True)
 
     def __str__(self):
-        return self.name
+        return self.designation
 class ChordsGroup(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=255, unique=True)

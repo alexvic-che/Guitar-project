@@ -23,7 +23,7 @@ class AddSongForm(forms.ModelForm):
                                                        "role": "switch"}),
             "difficult": forms.Select(attrs={"class": "form-select"}),
             "author": forms.Select(attrs={"class": "form-select"}),
-            "chords": forms.SelectMultiple(attrs={"class": "form-select"})
+            "chords": forms.SelectMultiple(attrs={"class": "form-select js-example-basic-multiple"})
         }
 class EditSongForm(forms.ModelForm):
 
@@ -40,7 +40,7 @@ class EditSongForm(forms.ModelForm):
                                                        "role": "switch"}),
             "difficult": forms.Select(attrs={"class": "form-select"}),
             "author": forms.Select(attrs={"class": "form-select"}),
-            "chords": forms.SelectMultiple(attrs={"class": "form-select"})
+            "chords": forms.SelectMultiple(attrs={"class": "form-select js-example-basic-multiple"})
         }
 
 
