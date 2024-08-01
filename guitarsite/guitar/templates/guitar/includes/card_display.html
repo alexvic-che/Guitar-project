@@ -28,8 +28,9 @@
                   {{song.content|truncatewords:25|linebreaks}}
                 </p>
                 {% if user.is_authenticated %}
-                  <a href="##" class="btn btn-primary">Добавить в избранное</a>
+                  <p><a href="##" class="btn btn-primary">Добавить в избранное</a></p>
                   {% if user == song.user_author or user.is_superuser %}
+
                   <a href="{% url 'update_song' slug=song.slug %}" class="btn btn-success">Редактировать</a>
                   <a href="{% url 'delete_song' slug=song.slug %}" class="btn btn-danger">Удалить</a>
                   {% endif %}
