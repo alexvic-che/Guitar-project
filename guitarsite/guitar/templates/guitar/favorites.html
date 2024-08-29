@@ -1,4 +1,4 @@
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <section class="main-content">
   <div class="container">
@@ -28,15 +28,13 @@
                   {{song.content|truncatewords:25|linebreaks}}
                 </p>
                 {% if user.is_authenticated %}
-                    {% if song not in user.favorite_songs.all %}
                   <p>
-                  <form action="{% url 'add_to_favorites' %}" method="post">
+                  <form action="{% url 'delete_from_favorites' %}" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="song_id" value="{{ song.id }}">
-                    <button type="submit" class="btn btn-primary">Добавить в избранное</button>
+                    <button type="submit" class="btn btn-warning">Удалить из избарнного</button>
                   </form>
                   </p>
-                  {% endif %}
                   {% if user == song.user_author or user.is_superuser %}
 
                   <a href="{% url 'update_song' slug=song.slug %}" class="btn btn-success">Редактировать</a>
@@ -45,15 +43,6 @@
                 {% endif %}
                 <h5 class="card-title">
                   <p>{{song.difficult.name}}</p>
-                  {% with song.chords.all as chords%}
-                    {% if chords%}
-                    <p>
-                      {% for chord in chords%}
-                        {{chord.designation}}
-                      {% endfor %}
-                    </p>
-                    {% endif %}
-                  {% endwith %}
                 </h5>
               </div>
             </div>
@@ -62,9 +51,11 @@
         {% endfor%}
       {% else %}
         <div class="col text-center">
-          <h1>Нет песен</h1>
+          <h1>У вас нет избранных песен</h1>
         </div>
       {% endif %}
     </div>
   </div>
 </section>
+
+{% endblock content%}

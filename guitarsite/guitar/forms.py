@@ -51,3 +51,6 @@ class ContactForm(forms.Form):
     content = forms.CharField(widget=forms.Textarea(attrs={"class": "form-control",'cols':60, 'rows':10, "placeholder":"Ваш текст"}),
                               label="Текст письма")
     captcha = CaptchaField(label="")
+
+class FavoriteForm(forms.Form):
+    song_id = forms.IntegerField(widget=forms.HiddenInput)

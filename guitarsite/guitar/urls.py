@@ -16,6 +16,10 @@ urlpatterns = [
     path("contact/", views.ContactFormView.as_view(), name='contact'),
     path("chords/", views.ShowAllChordsGroup.as_view(), name='chords'),
     path("chords/<slug:chords_group_slug>/", views.ShowChordsByGroup.as_view(), name='chords_by_group'),
+    path("songs/favourites/", views.ShowFavouritesSongs.as_view(), name='favourites_songs'),
+    path('add_to_favorites/', views.AddToFavoritesView.as_view(), name='add_to_favorites'),
+    path('delete_from_favorites/', views.DelteFromFavoritesView.as_view(), name='delete_from_favorites'),
+
 
 ]
 

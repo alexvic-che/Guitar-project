@@ -12,7 +12,7 @@ import string
 
 
 from .models import Songs, Difficulty, Authors, Chords, ChordsGroup
-from .forms import AddSongForm, ContactForm, EditSongForm
+from .forms import AddSongForm, ContactForm, EditSongForm, FavoriteForm
 from .utils import UserIsAuthorMixin
 
 class Index(ListView):
@@ -151,6 +151,28 @@ class ShowChordsByGroup(ListView):
         queryset = Chords.objects.filter(chords_group__slug=self.kwargs["chords_group_slug"])
         return queryset
 
+class ShowFavouritesSongs(LoginRequiredMixin, ListView):
+    template_name = 'guitar/favorites.html'
+    context_object_name = "songs"
+
+    def get_queryset(self):
+        queryset = self.request.user.favorite_songs.all()
+        return queryset
+
+class AddToFavoritesView(LoginRequiredMixin, View):
+    def post(self, request):
+        form = FavoriteForm(request.POST)
+        if form.is_valid():
+            song = get_object_or_404(Songs, id=form.cleaned_data['song_id'])
+            request.user.favorite_songs.add(song)
+        return redirect(request.META.get('HTTP_REFERER', 'song_list'))
+class DelteFromFavoritesView(LoginRequiredMixin, View):
+    def post(self, request):
+        form = FavoriteForm(request.POST)
+        if form.is_valid():
+            song = get_object_or_404(Songs, id=form.cleaned_data['song_id'])
+            request.user.favorite_songs.remove(song)
+        return redirect(request.META.get('HTTP_REFERER', 'song_list'))
 def not_found_page(request, exception):
     return HttpResponseNotFound("<h1>Страница не найдена</h1>")
 
