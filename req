@@ -1,0 +1,7 @@
+Чтобы сформировать список всех пакетов использую:
+
+pip freeze > requirements.txt
+
+При установке пакетов на новой машине:
+
+pip install -r requirements.txt
